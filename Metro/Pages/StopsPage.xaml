@@ -1,0 +1,27 @@
+﻿<Page x:Class="Metro.Pages.StopsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Metro.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="StopsPage">
+
+    <Grid>
+        <StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Добавление" FontSize="20" Margin="10" Click="AddStop"/>
+                <Button Content="Удаление" FontSize="20" Margin="10" Click="DeleteStop"/>
+            </StackPanel>
+            <DataGrid AutoGenerateColumns="False" Name="Datagrid" BeginningEdit="OpenInfo">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Дата начала" Binding="{Binding DateStartStop}"/>
+                    <DataGridTextColumn Header="Дата конца" Binding="{Binding DateEndStop}"/>
+                    <DataGridTextColumn Header="Станция №1" Binding="{Binding NameFirst}"/>
+                    <DataGridTextColumn Header="Станция №2" Binding="{Binding NameSecond}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+    </Grid>
+</Page>
